@@ -1,0 +1,70 @@
+:root {
+    --c-background: #323a44;
+    --c-background-light-accent: #4e5664;
+    --c-background-dark-accent: rgb(48, 56, 65);
+    --c-side-pane: #22262c;
+    --c-text: rgb(233, 233, 233);
+    --c-text-dim: #d7cebd;
+    --c-text-dimmer: #8f9295;
+    --c-icon: #bbbec0;
+    --c-icon-dim: #828388;
+    --c-bottom-bar: rgb(50, 50, 60);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--c-background);
+    color: var(--c-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+h1, h2, h3, h4, h5, h6, p, b, strong, i, a, div {
+    /* GTK makes elements have a caret for no reason... */
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    caret-color: transparent !important;
+}
+
+.horizontal-flex {
+    display: inline-flex;
+}
+
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    /* flex-shrink: 1; */
+    padding: 0 75px 0 25px;
+    background-color: var(--c-side-pane);
+    height: 100%;
+}
+
+.text-editor {
+    flex-grow: 1;
+}
+
+.bottom-bar {
+    background-color: var(--c-bottom-bar);
+    width: 100vw;
+    padding: 0 10px;
+}
+
+.bottom-bar i {
+    color: var(--c-icon-dim);
+    /* margin: 5px; */
+}
+
+.bottom-bar p {
+    margin: 5px;
+    font-size: .9em;
+    color: var(--c-text-dim);
+}
