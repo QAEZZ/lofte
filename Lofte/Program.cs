@@ -24,7 +24,8 @@ namespace HelloPhotinoApp
                 .Center()
                 // Users can resize windows by default.
                 // Let's make this one fixed instead.
-                .SetResizable(false)
+                .SetResizable(true)
+                .SetContextMenuEnabled(false)
                 .RegisterCustomSchemeHandler("app", (object sender, string scheme, string url, out string contentType) =>
                 {
                     contentType = "text/javascript";
