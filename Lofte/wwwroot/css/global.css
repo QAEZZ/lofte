@@ -46,9 +46,10 @@ i,
 a,
 div {
     /* GTK makes elements have a caret for no reason... */
-    user-select: none !important;
-    -webkit-user-select: none !important;
-    caret-color: transparent !important;
+    user-select: none;
+    -webkit-user-select: none;
+    caret-color: transparent;
+    cursor: default;
 }
 
 i {
