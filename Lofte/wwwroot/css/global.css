@@ -114,6 +114,7 @@ i:hover {
     flex-grow: 1;
     z-index: 5;
 }
+
 .editor .file-tabs {
     background-color: var(--c-background-light-accent);
     width: 100%;
@@ -122,15 +123,18 @@ i:hover {
     gap: 10px;
     box-sizing: border-box;
 }
+
 .editor .file-tabs i {
     font-size: medium;
     line-height: normal;
     transform: translateY(calc(-7px / 2));
 }
+
 .editor .file-tabs .files {
     flex-grow: 1;
     display: inline-flex;
 }
+
 .editor .file-tabs .files .file-tab {
     display: inline-flex;
     padding: 5px 10px 0 10px;
@@ -138,26 +142,31 @@ i:hover {
     height: 1.5em;
     transition: background .05s ease-in;
 }
+
 .editor .file-tabs .files .file-tab:hover {
     background-color: var(--c-hover-accent-for-light);
     border-bottom: 1px solid var(--c-hover-accent-for-light);
 }
+
 .editor .file-tabs .files .file-tab.selected {
     background-color: var(--c-background);
     border-bottom: 1px solid var(--c-background);
 }
+
 .editor .file-tabs .files .file-tab span {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
 }
+
 .editor .file-tabs .files .file-tab span p {
     padding: 0;
     margin: 0;
     font-size: smaller;
     transform: translateY(calc(-7px / 2));
 }
+
 .editor .file-tabs .files .file-tab span i {
     font-size: .7em;
     padding: 0;
@@ -167,7 +176,8 @@ i:hover {
 }
 
 .editor .text {
-    height: 90%; /* TEMPORARY */
+    height: 90%;
+    /* TEMPORARY */
     width: 100%;
     background-color: var(--c-background);
 }
@@ -202,6 +212,7 @@ i:hover {
     font-size: small;
     border-radius: 2px;
 }
+
 .button:hover {
     background-color: var(--c-light-accent);
 }
@@ -210,6 +221,7 @@ i:hover {
 .no-open-directory {
     max-width: 12rem;
 }
+
 .no-open-directory .no-open-directory-message {
     font-size: smaller;
     color: var(--c-text-dimmer);
@@ -227,5 +239,11 @@ i:hover {
 
 .hidden {
     width: 0;
+    visibility: hidden;
+}
+
+.exists-but-hidden {
+    position: absolute;
+    z-index: -9999;
     visibility: hidden;
 }

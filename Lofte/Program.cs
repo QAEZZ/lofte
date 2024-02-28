@@ -1,5 +1,6 @@
 ﻿using PhotinoNET;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
@@ -11,6 +12,25 @@ namespace HelloPhotinoApp
         [STAThread]
         static void Main(string[] args)
         {
+            string openPath;
+            if (args.Length < 1)
+            {
+                Console.WriteLine("Path not specified, opening in current directory.");
+                Process p = new();
+                
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.RedirectStandardOutput = true;
+                p.StartInfo.FileName = "pwd";
+                p.Start();
+                
+                openPath = p.StandardOutput.ReadToEnd();
+                p.WaitForExit();
+            }
+            else
+            {
+                openPath = args[0];
+            }
+
             // Window title declared here for visibility
             string windowTitle = "Lofte";
 
@@ -26,6 +46,7 @@ namespace HelloPhotinoApp
                 // Let's make this one fixed instead.
                 .SetResizable(true)
                 .SetContextMenuEnabled(false)
+                .SetGrantBrowserPermissions(true)
                 .RegisterCustomSchemeHandler("app", (object sender, string scheme, string url, out string contentType) =>
                 {
                     contentType = "text/javascript";
@@ -41,7 +62,8 @@ namespace HelloPhotinoApp
                 // PhotinoWindow was instantiated by calling a registration 
                 // method like the following RegisterWebMessageReceivedHandler.
                 // This could be added in the PhotinoWindowOptions if preferred.
-                .RegisterWebMessageReceivedHandler((object sender, string message) => {
+                .RegisterWebMessageReceivedHandler((object sender, string message) =>
+                {
                     var window = (PhotinoWindow)sender;
 
                     // The message argument is coming in from sendMessage.

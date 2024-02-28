@@ -24,10 +24,11 @@
                 <div class="content">
                     <p class="header" id="js-tab-name">EXPLORER</p>
 
-                    <div class="no-open-directory" id="js-no-open-directory">
+                    <!-- <div class="no-open-directory" id="js-no-open-directory">
                         <p class="no-open-directory-message">There are no open directories, please open one below.</p>
-                        <div class="button">Open Directory</div>
-                    </div>
+                        <div id="js-directory-upload-button" class="button">Open Directory</div>
+                        <input id="js-directory-input" type="file" onchange="selectFolder(event)" class="exists-but-hidden" webkitdirectory="true" multiple="true"/>
+                    </div> -->
 
                     <!-- <details open>
                         <summary>Folder 1</summary>
@@ -88,6 +89,7 @@
     <script src="app://dynamic.js"></script>
     <script src="js/resize.js"></script>
     <script src="js/sidebar.js"></script>
+    <script src="js/fileexplorer.js"></script>
 
     <script>
         function callDotNet() {
