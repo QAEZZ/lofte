@@ -9,4 +9,4 @@ Lofte **will** be cross-platform (except for MacOS, potentially...)
 ### Progress:
 
 **2/27/2024:** \
-![Progress](docs/2-27-2024.mp4)
+![Progress](./docs/2-27-2024.mp4)
