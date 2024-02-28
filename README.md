@@ -9,4 +9,4 @@ Lofte **will** be cross-platform (except for MacOS, potentially...)
 ### Progress:
 
 **2/27/2024:** \
-<video src="./docs/2-27-2024.mp4" width=180>
+![Github is so ass.](docs/github%20is%20so%20shit.gif)
