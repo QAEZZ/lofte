@@ -9,4 +9,4 @@ Lofte **will** be cross-platform (except for MacOS, potentially...)
 ### Progress:
 
 **2/27/2024:** \
-![Progress](./docs/2-27-2024.mp4)
+![Progress](https://github.com/QAEZZ/lofte/assets/65181690/566fee3f-4786-4cd0-8894-cba04a997d3f)
