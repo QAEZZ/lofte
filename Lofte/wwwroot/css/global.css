@@ -1,15 +1,18 @@
 :root {
-    --c-background: #323a44;
-    --c-background-light-accent: #4e5664;
+    --c-background: #303841;
+    --c-background-light-accent: #4f565e;
     --c-background-dark-accent: rgb(48, 56, 65);
-    --c-side-pane: #22262c;
+    --c-side-pane: rgb(34, 38, 42);
     --c-text: rgb(233, 233, 233);
     --c-text-dim: rgb(213, 213, 213);
     --c-text-dimmer: #8f9295;
     --c-icon: #bbbec0;
     --c-icon-dim: #828388;
-    --c-bottom-bar: rgb(50, 50, 60);
-    --c-dark-accent: rgb(24, 28, 34);
+    --c-bottom-bar: #2e3238;
+    --c-lighter-accent: rgb(54, 58, 64);
+    --c-light-accent: rgb(44, 48, 52);
+    --c-dark-accent: rgb(24, 28, 32);
+    --c-hover-accent-for-light: rgb(62, 70, 80);
 }
 
 html,
@@ -24,7 +27,10 @@ body {
 body {
     background-color: var(--c-background);
     color: var(--c-text);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 h1,
@@ -64,13 +70,14 @@ i:hover {
 }
 
 .sidebar {
-    min-width: fit-content;
-    width: 11rem;
+    width: max-content;
+    max-width: 95vw;
     background-color: var(--c-side-pane);
     height: 100%;
 }
 
 .sidebar .tabs {
+    min-width: max-content;
     width: 100%;
     justify-content: space-evenly;
     font-size: 1.75em;
@@ -93,11 +100,75 @@ i:hover {
 }
 
 .sidebar .content {
-    padding-left: 15px;
+    padding: 0 10px;
+    width: max-content;
+}
+
+.sidebar .content .header {
+    font-size: small;
+    font-weight: bold;
 }
 
 .editor {
     flex-grow: 1;
+    z-index: 5;
+}
+.editor .file-tabs {
+    background-color: var(--c-background-light-accent);
+    width: 100%;
+    padding: 7px 10px 0 10px;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+}
+.editor .file-tabs i {
+    font-size: medium;
+    line-height: normal;
+    transform: translateY(calc(-7px / 2));
+}
+.editor .file-tabs .files {
+    flex-grow: 1;
+    display: inline-flex;
+}
+.editor .file-tabs .files .file-tab {
+    display: inline-flex;
+    padding: 5px 10px 0 10px;
+    border-radius: 5px 5px 0 0;
+    height: 1.5em;
+    transition: background .05s ease-in;
+}
+.editor .file-tabs .files .file-tab:hover {
+    background-color: var(--c-hover-accent-for-light);
+    border-bottom: 1px solid var(--c-hover-accent-for-light);
+}
+.editor .file-tabs .files .file-tab.selected {
+    background-color: var(--c-background);
+    border-bottom: 1px solid var(--c-background);
+}
+.editor .file-tabs .files .file-tab span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.editor .file-tabs .files .file-tab span p {
+    padding: 0;
+    margin: 0;
+    font-size: smaller;
+    transform: translateY(calc(-7px / 2));
+}
+.editor .file-tabs .files .file-tab span i {
+    font-size: .7em;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    transform: translateY(-1px);
+}
+
+.editor .text {
+    height: 90%; /* TEMPORARY */
+    width: 100%;
+    background-color: var(--c-background);
 }
 
 .bottom-bar {
@@ -120,4 +191,40 @@ i:hover {
     margin: 5px;
     font-size: .8em;
     color: var(--c-text-dim);
+}
+
+.button {
+    padding: 5px;
+    background-color: var(--c-lighter-accent);
+    text-align: center;
+    cursor: pointer;
+    font-size: small;
+    border-radius: 2px;
+}
+.button:hover {
+    background-color: var(--c-light-accent);
+}
+
+
+.no-open-directory {
+    max-width: 12rem;
+}
+.no-open-directory .no-open-directory-message {
+    font-size: smaller;
+    color: var(--c-text-dimmer);
+}
+
+.resize {
+    background: var(--c-side-pane);
+    height: 100%;
+    width: 2px;
+    cursor: col-resize;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.hidden {
+    width: 0;
+    visibility: hidden;
 }

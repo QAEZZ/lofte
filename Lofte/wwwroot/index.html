@@ -14,36 +14,80 @@
 
 <body>
     <div class="vertical-flex" style="height: 100vh;">
-        <div class="horizontal-flex" style="flex-grow: 1;">
-            <div class="sidebar">
+        <div class="horizontal-flex" style="flex-grow: 1;" id="resize-container">
+            <div class="sidebar" id="js-sidebar">
                 <span class="tabs horizontal-flex">
                     <i class="selected ph ph-files tooltip"><span class="tooltiptext">Explorer</span></i>
                     <i class="ph ph-git-branch tooltip"><span class="tooltiptext">Git</span></i>
                     <i class="ph ph-puzzle-piece tooltip"><span class="tooltiptext">Extensions</span></i>
                 </span>
                 <div class="content">
-                    <p style="font-size: larg;font-weight: bold; margin: 0; padding-top: 5px;" id="js-tab-name">EXPLORER
-                    </p>
+                    <p class="header" id="js-tab-name">EXPLORER</p>
+
+                    <div class="no-open-directory" id="js-no-open-directory">
+                        <p class="no-open-directory-message">There are no open directories, please open one below.</p>
+                        <div class="button">Open Directory</div>
+                    </div>
+
+                    <!-- <details open>
+                        <summary>Folder 1</summary>
+                        <ul>
+                            <li>File 1</li>
+                            <li>File 2</li>
+                        </ul>
+                    </details>
+                    <details>
+                        <summary>Folder 2</summary>
+                        <ul>
+                            <li>File 3</li>
+                            <li>File 4</li>
+                        </ul>
+                    </details> -->
                 </div>
             </div>
 
-            <div class="editor">
-                <div class="file-tabs">
+            <div class="resize" id="js-resize"></div>
 
+            <div class="editor">
+                <div class="file-tabs horizontal-flex">
+                    <span class="horizontal-flex">
+                        <i class="ph-fill ph-arrow-fat-left"></i>
+                        <i class="ph-fill ph-arrow-fat-right"></i>
+                    </span>
+                    <span class="files">
+                        <div class="file-tab selected">
+                            <span>
+                                <p>FileName.cs</p>
+                                <i class="ph-bold ph-x"></i>
+                            </span>
+                        </div>
+                        <div class="file-tab">
+                            <span>
+                                <p>FileName.cs</p>
+                                <i class="ph-bold ph-x"></i>
+                            </span>
+                        </div>
+                    </span>
+                    <span class="file-operations horizontal-flex">
+                        <i class="ph-bold ph-plus"></i>
+                        <i class="ph-fill ph-caret-down"></i>
+                    </span>
                 </div>
                 <div class="text">
-                    
+                    <p>text</p>
                 </div>
             </div>
         </div>
         <div class="horizontal-flex bottom-bar">
-            <i class="ph-bold ph-sidebar-simple"></i>
+            <i class="ph-bold ph-sidebar-simple" id="js-toggle-sidebar"></i>
             <p>Line <span id="js-line-number">X</span>, Column <span id="js-column-number">X</span></p>
         </div>
     </div>
 
 
     <script src="app://dynamic.js"></script>
+    <script src="js/resize.js"></script>
+    <script src="js/sidebar.js"></script>
 
     <script>
         function callDotNet() {
