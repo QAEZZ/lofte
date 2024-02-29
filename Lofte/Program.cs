@@ -1,82 +1,95 @@
-﻿using PhotinoNET;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
+using PhotinoNET;
+using LofteApp.Communication;
 
-namespace HelloPhotinoApp
+namespace LofteApp;
+
+class Program
 {
-    class Program
+    [STAThread]
+    public static void Main(params string[] args)
     {
-        [STAThread]
-        static void Main(string[] args)
+        string openPath;
+        if (args.Length < 1)
         {
-            string openPath;
-            if (args.Length < 1)
-            {
-                Console.WriteLine("Path not specified, opening in current directory.");
-                Process p = new();
-                
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.RedirectStandardOutput = true;
-                p.StartInfo.FileName = "pwd";
-                p.Start();
-                
-                openPath = p.StandardOutput.ReadToEnd();
-                p.WaitForExit();
-            }
-            else
-            {
-                openPath = args[0];
-            }
+            Console.WriteLine("Path not specified, opening in current directory.");
+            openPath = Directory.GetCurrentDirectory();
+            Console.WriteLine(openPath);
+        }
+        else
+        {
+            openPath = args[0];
 
-            // Window title declared here for visibility
-            string windowTitle = "Lofte";
+            if (!Directory.Exists(Path.GetFullPath(openPath)))
+            {
+                Console.WriteLine($"Path \"{Path.GetFullPath(openPath)}\" does not exist.");
+                return;
+            }
+        }
 
-            // Creating a new PhotinoWindow instance with the fluent API
-            var window = new PhotinoWindow()
-                .SetTitle(windowTitle)
-                // Resize to a percentage of the main monitor work area
-                .SetUseOsDefaultSize(false)
-                .SetSize(new Size(1200, 800))
-                // Center window in the middle of the screen
-                .Center()
-                // Users can resize windows by default.
-                // Let's make this one fixed instead.
-                .SetResizable(true)
-                .SetContextMenuEnabled(false)
-                .SetGrantBrowserPermissions(true)
-                .RegisterCustomSchemeHandler("app", (object sender, string scheme, string url, out string contentType) =>
+        string windowTitle = "Lofte";
+
+#pragma warning disable CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+
+        var window = new PhotinoWindow()
+            .SetTitle(windowTitle)
+            .SetUseOsDefaultSize(false)
+            .SetSize(new Size(1200, 800))
+            .Center()
+            .SetResizable(true)
+            .SetContextMenuEnabled(false)
+            .SetGrantBrowserPermissions(true)
+            .RegisterCustomSchemeHandler(
+                "app",
+                (object sender, string scheme, string url, out string contentType) =>
                 {
                     contentType = "text/javascript";
-                    return new MemoryStream(Encoding.UTF8.GetBytes(@"
+                    return new MemoryStream(
+                        Encoding.UTF8.GetBytes(
+                            @"
                         /*(() =>{
                             window.setTimeout(() => {
                                 alert(`🎉 Dynamically inserted JavaScript.`);
                             }, 1000);
                         })();*/
-                    "));
-                })
-                // Most event handlers can be registered after the
-                // PhotinoWindow was instantiated by calling a registration 
-                // method like the following RegisterWebMessageReceivedHandler.
-                // This could be added in the PhotinoWindowOptions if preferred.
-                .RegisterWebMessageReceivedHandler((object sender, string message) =>
+                    "
+                        )
+                    );
+                }
+            )
+            // Most event handlers can be registered after the
+            // PhotinoWindow was instantiated by calling a registration
+            // method like the following RegisterWebMessageReceivedHandler.
+            // This could be added in the PhotinoWindowOptions if preferred.
+            .RegisterWebMessageReceivedHandler(
+                (object sender, string message) =>
                 {
                     var window = (PhotinoWindow)sender;
 
-                    // The message argument is coming in from sendMessage.
-                    // "window.external.sendMessage(message: string)"
-                    string response = $"Received message: \"{message}\"";
+                    Communicator.ProcessMessage(sender, ref message, openPath);
 
-                    // Send a message back the to JavaScript event handler.
-                    // "window.external.receiveMessage(callback: Function)"
-                    window.SendWebMessage(response);
-                })
-                .Load("wwwroot/index.html"); // Can be used with relative path strings or "new URI()" instance to load a website.
+                    // switch (message)
+                    // {
+                    //     case "GetFileExplorer":
+                    //         window.SendWebMessage(
+                    //             $"{{\"msg\":\"FileExplorer\",\"data\":[\"data here\"]}}"
+                    //         );
+                    //         break;
 
-            window.WaitForClose(); // Starts the application event loop
-        }
+                    //     default:
+                    //         Console.WriteLine($"Uknown message, {message}");
+                    //         break;
+                    // }
+                }
+            )
+            .Load("wwwroot/index.html");
+#pragma warning restore CS8622 // Nullability of reference types in type of parameter doesn't match the target delegate (possibly because of nullability attributes).
+
+
+        window.WaitForClose();
     }
 }

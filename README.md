@@ -8,5 +8,8 @@ Lofte **will** be cross-platform (except for MacOS, potentially...)
 
 ### Progress:
 
-**2/27/2024:** \
-![Github is so ass.](docs/github%20is%20so%20shit.gif)
+**2/28/2024:** File explorer done. \
+![Github is so ass.](docs/github%20is%20so%20shit%202-28-2024.gif)
+
+**2/27/2024:** Basic structure done. \
+![Github is so ass.](docs/github%20is%20so%20shit%202-27-2024.gif)

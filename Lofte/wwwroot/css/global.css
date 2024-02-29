@@ -13,6 +13,7 @@
     --c-light-accent: rgb(44, 48, 52);
     --c-dark-accent: rgb(24, 28, 32);
     --c-hover-accent-for-light: rgb(62, 70, 80);
+    --c-hover-accent-for-dark: #292d33;
 }
 
 html,
@@ -71,7 +72,7 @@ i:hover {
 }
 
 .sidebar {
-    width: max-content;
+    width: 200px;
     max-width: 95vw;
     background-color: var(--c-side-pane);
     height: 100%;
@@ -246,4 +247,43 @@ i:hover {
     position: absolute;
     z-index: -9999;
     visibility: hidden;
+}
+
+.sidebar .content summary {
+    /* border: solid 1px red; */
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar .content summary, .sidebar .content details {
+    color: var(--c-text-dim);
+    font-size: .9rem;
+    width: 100%;
+}
+
+
+summary.folder {
+    /* Remove the default triangle */
+    display: block;
+}
+summary i, summary i:hover {
+    cursor: default;
+    font-size: large;
+    opacity: 1;
+    color: var(--c-icon-dim);
+}
+
+summary span {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    gap: 5px;
+    transition: all .05s ease-in;
+}
+summary span p {
+    padding: 0;
+    margin: 0;
+}
+summary span:hover {
+    opacity: .7;
 }

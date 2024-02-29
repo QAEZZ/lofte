@@ -21,7 +21,7 @@
                     <i class="ph ph-git-branch tooltip"><span class="tooltiptext">Git</span></i>
                     <i class="ph ph-puzzle-piece tooltip"><span class="tooltiptext">Extensions</span></i>
                 </span>
-                <div class="content">
+                <div class="content" id="js-sidebar-content">
                     <p class="header" id="js-tab-name">EXPLORER</p>
 
                     <!-- <div class="no-open-directory" id="js-no-open-directory">
@@ -87,17 +87,18 @@
 
 
     <script src="app://dynamic.js"></script>
+    <script src="js/dotnet.js"></script>
     <script src="js/resize.js"></script>
     <script src="js/sidebar.js"></script>
-    <script src="js/fileexplorer.js"></script>
+    <!-- <script src="js/fileexplorer.js"></script> -->
 
-    <script>
-        function callDotNet() {
-            window.external.sendMessage('Hi .NET! 🤖');
+    <style>
+        /* Apply additional left padding for nested folders */
+        details summary {
+            padding-left: 20px;
+            /* Adjust the padding as needed */
         }
-
-        window.external.receiveMessage(message => alert(message));
-    </script>
+    </style>
 </body>
 
 </html>
