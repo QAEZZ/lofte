@@ -11,31 +11,31 @@ public class Communicator
 {
     public class MessageObject
     {
-        public string? msg { get; set; }
-        public string[]? data { get; set; }
+        public string? Msg { get; set; }
+        public string[]? Data { get; set; }
     }
 
     private static string CreateMessage(string message, string[] data)
     {
-        var messageObject = new MessageObject { msg = message, data = data };
+        var messageObject = new MessageObject { Msg = message, Data = data };
 
         return JsonConvert.SerializeObject(messageObject);
     }
 
     public static void ProcessMessage(
         object? photinoWindow,
-        ref string message, /*we make this a ref because it could be pretty big*/
-        params string[] kwargs
+        ref string message, /*we make this a ref because it could be pretty big - Yendy*/
+        string openPath
     )
     {
         PhotinoWindow? window = (PhotinoWindow)photinoWindow ?? throw new NullReferenceException();
 
         MessageObject? messageJson = JsonConvert.DeserializeObject<MessageObject>(message);
 
-        switch (messageJson.msg)
+        switch (messageJson.Msg)
         {
             case "GetFileExplorer":
-                GetFileExplorer(window, messageJson, kwargs);
+                GetFileExplorer(window, messageJson, openPath);
                 break;
             default:
                 break;
@@ -45,10 +45,10 @@ public class Communicator
     private static void GetFileExplorer(
         PhotinoWindow window,
         MessageObject messageJson,
-        params string[] kwargs
+        string openPath
     )
     {
-        string explorerPath = kwargs[0];
+        string explorerPath = openPath;
 
         var fileSystem = BuildFileSystem(explorerPath);
 
@@ -63,6 +63,7 @@ public class Communicator
         {
             Name = Path.GetFileName(path),
             IsDirectory = true,
+            Path = string.Empty,
             Children = new List<FileSystemNode>()
         };
 
@@ -76,7 +77,7 @@ public class Communicator
             foreach (string file in Directory.GetFiles(path))
             {
                 node.Children.Add(
-                    new FileSystemNode { Name = Path.GetFileName(file), IsDirectory = false }
+                    new FileSystemNode { Name = Path.GetFileName(file), IsDirectory = false, Path = Path.GetFullPath(file) }
                 );
             }
         }
@@ -92,6 +93,7 @@ public class Communicator
     {
         public string Name { get; set; }
         public bool IsDirectory { get; set; }
+        public string Path { get; set; }
         public List<FileSystemNode> Children { get; set; }
     }
 }

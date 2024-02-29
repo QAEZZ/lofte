@@ -5,21 +5,21 @@ function callDotNet(message) {
 
 window.external.receiveMessage(message => {
     message = JSON.parse(message);
-    switch (message.msg) {
+    switch (message.Msg) {
         case "FileExplorer":
-            let json_string = JSON.stringify(message.data[0]);
+            let json_string = JSON.stringify(message.Data[0]);
             console.log(json_string);
-            processFileExplorerData(message.data[0]);
+            processFileExplorerData(message.Data[0]);
             break;
         default:
-            console.log(`Unknown message, ${message.msg}:\n${message.data}`);
+            console.log(`Unknown message, ${message.Msg}:\n${message.Data}`);
             break;
     }
 });
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
-    callDotNet('{"msg": "GetFileExplorer", "data": []}');
+    callDotNet('{"Msg": "GetFileExplorer", "Data": []}');
 });
 
 function processFileExplorerData(jsonData) {
@@ -30,6 +30,7 @@ function processFileExplorerData(jsonData) {
         if (node.IsDirectory) {
             let details = document.createElement('details');
             details.classList.add('folder');
+            details.setAttribute('data-path', node.Path);
             parentElement.appendChild(details);
     
             let summary = document.createElement('summary');
@@ -45,6 +46,7 @@ function processFileExplorerData(jsonData) {
             iconSpan.appendChild(iconOpen);
     
             let textNode = document.createElement('p');
+            textNode.setAttribute('data-path', textNode.Path);
             textNode.innerHTML = node.Name;
             iconSpan.appendChild(textNode);
     
@@ -77,6 +79,7 @@ function processFileExplorerData(jsonData) {
             iconFile.className = 'ph-bold ph-file';
             iconSpan.appendChild(iconFile);
             let textNode = document.createElement('p');
+            textNode.setAttribute('data-path', textNode.Path);
             textNode.innerHTML = node.Name;
             iconSpan.appendChild(textNode);
             summary.appendChild(iconSpan);
@@ -85,7 +88,7 @@ function processFileExplorerData(jsonData) {
             summary.classList.add('file');
     
             if (depth > 0) {
-                summary.style.marginLeft = (depth + 1) * 10 + 'px';
+                summary.style.marginLeft = depth * 10 + 'px';
             }
         }
     }

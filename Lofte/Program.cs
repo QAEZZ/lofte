@@ -68,22 +68,9 @@ class Program
             .RegisterWebMessageReceivedHandler(
                 (object sender, string message) =>
                 {
-                    var window = (PhotinoWindow)sender;
-
+                    // var window = (PhotinoWindow)sender;
+                    // window.SendWebMessage("{'msg': 'LofteAppReady', 'data': []}");
                     Communicator.ProcessMessage(sender, ref message, openPath);
-
-                    // switch (message)
-                    // {
-                    //     case "GetFileExplorer":
-                    //         window.SendWebMessage(
-                    //             $"{{\"msg\":\"FileExplorer\",\"data\":[\"data here\"]}}"
-                    //         );
-                    //         break;
-
-                    //     default:
-                    //         Console.WriteLine($"Uknown message, {message}");
-                    //         break;
-                    // }
                 }
             )
             .Load("wwwroot/index.html");

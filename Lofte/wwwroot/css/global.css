@@ -262,8 +262,13 @@ i:hover {
 }
 
 
+details::marker {
+    display: none;
+}
+details summary::-webkit-details-marker {
+    display:none;
+}
 summary.folder {
-    /* Remove the default triangle */
     display: block;
 }
 summary i, summary i:hover {
@@ -274,10 +279,16 @@ summary i, summary i:hover {
 }
 
 summary span {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     width: 100%;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 5px;
+    -webkit-transition: all .05s ease-in;
+    -o-transition: all .05s ease-in;
     transition: all .05s ease-in;
 }
 summary span p {
