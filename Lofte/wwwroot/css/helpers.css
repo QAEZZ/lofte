@@ -1,0 +1,29 @@
+.horizontal-flex {
+    display: inline-flex;
+}
+
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    width: 0;
+    visibility: hidden;
+}
+
+.exists-but-hidden {
+    position: absolute;
+    z-index: -9999;
+    visibility: hidden;
+}
+
+.resize {
+    background: var(--c-side-pane);
+    height: 100%;
+    width: 2px;
+    cursor: col-resize;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+}
