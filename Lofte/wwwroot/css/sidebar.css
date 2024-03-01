@@ -1,4 +1,7 @@
 .sidebar {
+    position: relative;
+    top: 0;
+    left: 0;
     width: 200px;
     max-width: 95vw;
     background-color: var(--c-side-pane);

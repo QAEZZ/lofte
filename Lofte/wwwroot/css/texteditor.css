@@ -82,21 +82,36 @@
     /* overflow: auto; */
     height: 110%;
     /* TEMPORARY */
-    width: 100%;
+    width: auto;
     background-color: var(--c-background);
+
+    overflow-x: auto;
+    overflow-y: auto;
 }
-.editor .text code, .editor .text pre {
+
+.editor .text code,
+.editor .text pre {
     padding-top: 0 !important;
     margin-top: 0 !important;
     caret-color: goldenrod !important;
+    overflow-y: auto;
 }
+
+.editor .text pre {
+    border: 1px dashed blue;
+    width: calc(100vw - 200px);
+    /* overflow: auto;
+    word-wrap: normal;
+    white-space: pre; */
+}
+
 .editor .text code {
     background-color: var(--c-background) !important;
     caret-color: goldenrod !important;
-    /* border: 1px dashed blue; */
 }
 
 .editor .text textarea {
+    border: 1px solid red;
     position: absolute;
     /* Same as the css for prism. */
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -109,17 +124,20 @@
     outline: none;
     padding-left: 3.8em;
     font-size: 1em;
-    line-height: 1.5;
-    border: none;
+    line-height: 1.25;
+    /* border: none; */
 
     -moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
 
     color: transparent;
+    caret-color: goldenrod !important;
+    overflow-y: hidden;
+    resize: none;
 }

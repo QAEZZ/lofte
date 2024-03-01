@@ -1,5 +1,5 @@
 /* PrismJS 1.29.0
-https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apex+apl+applescript+aql+arduino+arff+armasm+arturo+asciidoc+aspnet+asm6502+asmatmel+autohotkey+autoit+avisynth+avro-idl+awk+bash+basic+batch+bbcode+bbj+bicep+birb+bison+bnf+bqn+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cfscript+chaiscript+cil+cilkc+cilkcpp+clojure+cmake+cobol+coffeescript+concurnas+csp+cooklang+coq+crystal+css-extras+csv+cue+cypher+d+dart+dataweave+dax+dhall+diff+django+dns-zone-file+docker+dot+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+false+firestore-security-rules+flow+fortran+ftl+gml+gap+gcode+gdscript+gedcom+gettext+gherkin+git+glsl+gn+linker-script+go+go-module+gradle+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+hoon+http+hpkp+hsts+ichigojam+icon+icu-message-format+idris+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jexl+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keepalived+keyman+kotlin+kumir+kusto+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+log+lolcode+lua+magma+makefile+markdown+markup-templating+mata+matlab+maxscript+mel+mermaid+metafont+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nevod+nginx+nim+nix+nsis+objectivec+ocaml+odin+opencl+openqasm+oz+parigp+parser+pascal+pascaligo+psl+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plant-uml+plsql+powerquery+powershell+processing+prolog+promql+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+qsharp+q+qml+qore+r+racket+cshtml+jsx+tsx+reason+regex+rego+renpy+rescript+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+squirrel+stan+stata+iecst+stylus+supercollider+swift+systemd+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+tremor+turtle+twig+typescript+typoscript+unrealscript+uorazor+uri+v+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+web-idl+wgsl+wiki+wolfram+wren+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=line-numbers+autolinker+wpd+file-highlight+highlight-keywords+remove-initial-line-feed+inline-color+previewers+autoloader+keep-markup+unescaped-markup+normalize-whitespace+data-uri-highlight+toolbar+copy-to-clipboard+match-braces+diff-highlight+filter-highlight-all */
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apex+apl+applescript+aql+arduino+arff+armasm+arturo+asciidoc+aspnet+asm6502+asmatmel+autohotkey+autoit+avisynth+avro-idl+awk+bash+basic+batch+bbcode+bbj+bicep+birb+bison+bnf+bqn+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cfscript+chaiscript+cil+cilkc+cilkcpp+clojure+cmake+cobol+coffeescript+concurnas+csp+cooklang+coq+crystal+css-extras+csv+cue+cypher+d+dart+dataweave+dax+dhall+diff+django+dns-zone-file+docker+dot+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+false+firestore-security-rules+flow+fortran+ftl+gml+gap+gcode+gdscript+gedcom+gettext+gherkin+git+glsl+gn+linker-script+go+go-module+gradle+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+hoon+http+hpkp+hsts+ichigojam+icon+icu-message-format+idris+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jexl+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keepalived+keyman+kotlin+kumir+kusto+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+log+lolcode+lua+magma+makefile+markdown+markup-templating+mata+matlab+maxscript+mel+mermaid+metafont+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nevod+nginx+nim+nix+nsis+objectivec+ocaml+odin+opencl+openqasm+oz+parigp+parser+pascal+pascaligo+psl+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plant-uml+plsql+powerquery+powershell+processing+prolog+promql+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+qsharp+q+qml+qore+r+racket+cshtml+jsx+tsx+reason+regex+rego+renpy+rescript+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+squirrel+stan+stata+iecst+stylus+supercollider+swift+systemd+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+tremor+turtle+twig+typescript+typoscript+unrealscript+uorazor+uri+v+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+web-idl+wgsl+wiki+wolfram+wren+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=line-numbers+show-invisibles+autolinker+wpd+file-highlight+highlight-keywords+remove-initial-line-feed+inline-color+previewers+autoloader+keep-markup+unescaped-markup+normalize-whitespace+data-uri-highlight+match-braces+diff-highlight+filter-highlight-all */
 /// <reference lib="WebWorker"/>
 
 var _self = (typeof window !== 'undefined')
@@ -21771,6 +21771,90 @@ Prism.languages.yang = {
 		return;
 	}
 
+
+	var invisibles = {
+		'tab': /\t/,
+		'crlf': /\r\n/,
+		'lf': /\n/,
+		'cr': /\r/,
+		'space': / /
+	};
+
+
+	/**
+	 * Handles the recursive calling of `addInvisibles` for one token.
+	 *
+	 * @param {Object|Array} tokens The grammar or array which contains the token.
+	 * @param {string|number} name The name or index of the token in `tokens`.
+	 */
+	function handleToken(tokens, name) {
+		var value = tokens[name];
+
+		var type = Prism.util.type(value);
+		switch (type) {
+			case 'RegExp':
+				var inside = {};
+				tokens[name] = {
+					pattern: value,
+					inside: inside
+				};
+				addInvisibles(inside);
+				break;
+
+			case 'Array':
+				for (var i = 0, l = value.length; i < l; i++) {
+					handleToken(value, i);
+				}
+				break;
+
+			default: // 'Object'
+				// eslint-disable-next-line no-redeclare
+				var inside = value.inside || (value.inside = {});
+				addInvisibles(inside);
+				break;
+		}
+	}
+
+	/**
+	 * Recursively adds patterns to match invisible characters to the given grammar (if not added already).
+	 *
+	 * @param {Object} grammar
+	 */
+	function addInvisibles(grammar) {
+		if (!grammar || grammar['tab']) {
+			return;
+		}
+
+		// assign invisibles here to "mark" the grammar in case of self references
+		for (var name in invisibles) {
+			if (invisibles.hasOwnProperty(name)) {
+				grammar[name] = invisibles[name];
+			}
+		}
+
+		// eslint-disable-next-line no-redeclare
+		for (var name in grammar) {
+			if (grammar.hasOwnProperty(name) && !invisibles[name]) {
+				if (name === 'rest') {
+					addInvisibles(grammar['rest']);
+				} else {
+					handleToken(grammar, name);
+				}
+			}
+		}
+	}
+
+	Prism.hooks.add('before-highlight', function (env) {
+		addInvisibles(env.grammar);
+	});
+}());
+
+(function () {
+
+	if (typeof Prism === 'undefined') {
+		return;
+	}
+
 	var url = /\b([a-z]{3,7}:\/\/|tel:)[\w\-+%~/.:=&!$'()*,;@]+(?:\?[\w\-+%~/.:=?&!$'()*,;@]*)?(?:#[\w\-+%~/.:#=?&!$'()*,;@]*)?/;
 	var email = /\b\S+@[\w.]+[a-z]{2}/;
 	var linkMd = /\[([^\]]+)\]\(([^)]+)\)/;
@@ -24103,347 +24187,6 @@ Prism.languages.yang = {
 		}
 
 		Prism.plugins.dataURIHighlight.processGrammar(env.grammar);
-	});
-}());
-
-(function () {
-
-	if (typeof Prism === 'undefined' || typeof document === 'undefined') {
-		return;
-	}
-
-	var callbacks = [];
-	var map = {};
-	var noop = function () {};
-
-	Prism.plugins.toolbar = {};
-
-	/**
-	 * @typedef ButtonOptions
-	 * @property {string} text The text displayed.
-	 * @property {string} [url] The URL of the link which will be created.
-	 * @property {Function} [onClick] The event listener for the `click` event of the created button.
-	 * @property {string} [className] The class attribute to include with element.
-	 */
-
-	/**
-	 * Register a button callback with the toolbar.
-	 *
-	 * @param {string} key
-	 * @param {ButtonOptions|Function} opts
-	 */
-	var registerButton = Prism.plugins.toolbar.registerButton = function (key, opts) {
-		var callback;
-
-		if (typeof opts === 'function') {
-			callback = opts;
-		} else {
-			callback = function (env) {
-				var element;
-
-				if (typeof opts.onClick === 'function') {
-					element = document.createElement('button');
-					element.type = 'button';
-					element.addEventListener('click', function () {
-						opts.onClick.call(this, env);
-					});
-				} else if (typeof opts.url === 'string') {
-					element = document.createElement('a');
-					element.href = opts.url;
-				} else {
-					element = document.createElement('span');
-				}
-
-				if (opts.className) {
-					element.classList.add(opts.className);
-				}
-
-				element.textContent = opts.text;
-
-				return element;
-			};
-		}
-
-		if (key in map) {
-			console.warn('There is a button with the key "' + key + '" registered already.');
-			return;
-		}
-
-		callbacks.push(map[key] = callback);
-	};
-
-	/**
-	 * Returns the callback order of the given element.
-	 *
-	 * @param {HTMLElement} element
-	 * @returns {string[] | undefined}
-	 */
-	function getOrder(element) {
-		while (element) {
-			var order = element.getAttribute('data-toolbar-order');
-			if (order != null) {
-				order = order.trim();
-				if (order.length) {
-					return order.split(/\s*,\s*/g);
-				} else {
-					return [];
-				}
-			}
-			element = element.parentElement;
-		}
-	}
-
-	/**
-	 * Post-highlight Prism hook callback.
-	 *
-	 * @param env
-	 */
-	var hook = Prism.plugins.toolbar.hook = function (env) {
-		// Check if inline or actual code block (credit to line-numbers plugin)
-		var pre = env.element.parentNode;
-		if (!pre || !/pre/i.test(pre.nodeName)) {
-			return;
-		}
-
-		// Autoloader rehighlights, so only do this once.
-		if (pre.parentNode.classList.contains('code-toolbar')) {
-			return;
-		}
-
-		// Create wrapper for <pre> to prevent scrolling toolbar with content
-		var wrapper = document.createElement('div');
-		wrapper.classList.add('code-toolbar');
-		pre.parentNode.insertBefore(wrapper, pre);
-		wrapper.appendChild(pre);
-
-		// Setup the toolbar
-		var toolbar = document.createElement('div');
-		toolbar.classList.add('toolbar');
-
-		// order callbacks
-		var elementCallbacks = callbacks;
-		var order = getOrder(env.element);
-		if (order) {
-			elementCallbacks = order.map(function (key) {
-				return map[key] || noop;
-			});
-		}
-
-		elementCallbacks.forEach(function (callback) {
-			var element = callback(env);
-
-			if (!element) {
-				return;
-			}
-
-			var item = document.createElement('div');
-			item.classList.add('toolbar-item');
-
-			item.appendChild(element);
-			toolbar.appendChild(item);
-		});
-
-		// Add our toolbar to the currently created wrapper of <pre> tag
-		wrapper.appendChild(toolbar);
-	};
-
-	registerButton('label', function (env) {
-		var pre = env.element.parentNode;
-		if (!pre || !/pre/i.test(pre.nodeName)) {
-			return;
-		}
-
-		if (!pre.hasAttribute('data-label')) {
-			return;
-		}
-
-		var element; var template;
-		var text = pre.getAttribute('data-label');
-		try {
-			// Any normal text will blow up this selector.
-			template = document.querySelector('template#' + text);
-		} catch (e) { /* noop */ }
-
-		if (template) {
-			element = template.content;
-		} else {
-			if (pre.hasAttribute('data-url')) {
-				element = document.createElement('a');
-				element.href = pre.getAttribute('data-url');
-			} else {
-				element = document.createElement('span');
-			}
-
-			element.textContent = text;
-		}
-
-		return element;
-	});
-
-	/**
-	 * Register the toolbar with Prism.
-	 */
-	Prism.hooks.add('complete', hook);
-}());
-
-(function () {
-
-	if (typeof Prism === 'undefined' || typeof document === 'undefined') {
-		return;
-	}
-
-	if (!Prism.plugins.toolbar) {
-		console.warn('Copy to Clipboard plugin loaded before Toolbar plugin.');
-
-		return;
-	}
-
-	/**
-	 * When the given elements is clicked by the user, the given text will be copied to clipboard.
-	 *
-	 * @param {HTMLElement} element
-	 * @param {CopyInfo} copyInfo
-	 *
-	 * @typedef CopyInfo
-	 * @property {() => string} getText
-	 * @property {() => void} success
-	 * @property {(reason: unknown) => void} error
-	 */
-	function registerClipboard(element, copyInfo) {
-		element.addEventListener('click', function () {
-			copyTextToClipboard(copyInfo);
-		});
-	}
-
-	// https://stackoverflow.com/a/30810322/7595472
-
-	/** @param {CopyInfo} copyInfo */
-	function fallbackCopyTextToClipboard(copyInfo) {
-		var textArea = document.createElement('textarea');
-		textArea.value = copyInfo.getText();
-
-		// Avoid scrolling to bottom
-		textArea.style.top = '0';
-		textArea.style.left = '0';
-		textArea.style.position = 'fixed';
-
-		document.body.appendChild(textArea);
-		textArea.focus();
-		textArea.select();
-
-		try {
-			var successful = document.execCommand('copy');
-			setTimeout(function () {
-				if (successful) {
-					copyInfo.success();
-				} else {
-					copyInfo.error();
-				}
-			}, 1);
-		} catch (err) {
-			setTimeout(function () {
-				copyInfo.error(err);
-			}, 1);
-		}
-
-		document.body.removeChild(textArea);
-	}
-	/** @param {CopyInfo} copyInfo */
-	function copyTextToClipboard(copyInfo) {
-		if (navigator.clipboard) {
-			navigator.clipboard.writeText(copyInfo.getText()).then(copyInfo.success, function () {
-				// try the fallback in case `writeText` didn't work
-				fallbackCopyTextToClipboard(copyInfo);
-			});
-		} else {
-			fallbackCopyTextToClipboard(copyInfo);
-		}
-	}
-
-	/**
-	 * Selects the text content of the given element.
-	 *
-	 * @param {Element} element
-	 */
-	function selectElementText(element) {
-		// https://stackoverflow.com/a/20079910/7595472
-		window.getSelection().selectAllChildren(element);
-	}
-
-	/**
-	 * Traverses up the DOM tree to find data attributes that override the default plugin settings.
-	 *
-	 * @param {Element} startElement An element to start from.
-	 * @returns {Settings} The plugin settings.
-	 * @typedef {Record<"copy" | "copy-error" | "copy-success" | "copy-timeout", string | number>} Settings
-	 */
-	function getSettings(startElement) {
-		/** @type {Settings} */
-		var settings = {
-			'copy': 'Copy',
-			'copy-error': 'Press Ctrl+C to copy',
-			'copy-success': 'Copied!',
-			'copy-timeout': 5000
-		};
-
-		var prefix = 'data-prismjs-';
-		for (var key in settings) {
-			var attr = prefix + key;
-			var element = startElement;
-			while (element && !element.hasAttribute(attr)) {
-				element = element.parentElement;
-			}
-			if (element) {
-				settings[key] = element.getAttribute(attr);
-			}
-		}
-		return settings;
-	}
-
-	Prism.plugins.toolbar.registerButton('copy-to-clipboard', function (env) {
-		var element = env.element;
-
-		var settings = getSettings(element);
-
-		var linkCopy = document.createElement('button');
-		linkCopy.className = 'copy-to-clipboard-button';
-		linkCopy.setAttribute('type', 'button');
-		var linkSpan = document.createElement('span');
-		linkCopy.appendChild(linkSpan);
-
-		setState('copy');
-
-		registerClipboard(linkCopy, {
-			getText: function () {
-				return element.textContent;
-			},
-			success: function () {
-				setState('copy-success');
-
-				resetText();
-			},
-			error: function () {
-				setState('copy-error');
-
-				setTimeout(function () {
-					selectElementText(element);
-				}, 1);
-
-				resetText();
-			}
-		});
-
-		return linkCopy;
-
-		function resetText() {
-			setTimeout(function () { setState('copy'); }, settings['copy-timeout']);
-		}
-
-		/** @param {"copy" | "copy-error" | "copy-success"} state */
-		function setState(state) {
-			linkSpan.textContent = settings[state];
-			linkCopy.setAttribute('data-copy-state', state);
-		}
 	});
 }());
 
