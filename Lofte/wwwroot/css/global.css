@@ -62,82 +62,13 @@ i:hover {
     opacity: .7;
 }
 
-.editor {
-    flex-grow: 1;
-    z-index: 5;
-}
-
-.editor .file-tabs {
-    background-color: var(--c-background-light-accent);
-    width: 100%;
-    padding: 7px 10px 0 10px;
-    align-items: center;
-    gap: 10px;
-    box-sizing: border-box;
-}
-
-.editor .file-tabs i {
-    font-size: medium;
-    line-height: normal;
-    transform: translateY(calc(-7px / 2));
-}
-
-.editor .file-tabs .files {
-    flex-grow: 1;
-    display: inline-flex;
-}
-
-.editor .file-tabs .files .file-tab {
-    display: inline-flex;
-    padding: 5px 10px 0 10px;
-    border-radius: 5px 5px 0 0;
-    height: 1.5em;
-    transition: background .05s ease-in;
-}
-
-.editor .file-tabs .files .file-tab:hover {
-    background-color: var(--c-hover-accent-for-light);
-    border-bottom: 1px solid var(--c-hover-accent-for-light);
-}
-
-.editor .file-tabs .files .file-tab.selected {
-    background-color: var(--c-background);
-    border-bottom: 1px solid var(--c-background);
-}
-
-.editor .file-tabs .files .file-tab span {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.editor .file-tabs .files .file-tab span p {
-    padding: 0;
-    margin: 0;
-    font-size: smaller;
-    transform: translateY(calc(-7px / 2));
-}
-
-.editor .file-tabs .files .file-tab span i {
-    font-size: .7em;
-    padding: 0;
-    margin: 0;
-    line-height: 0;
-    transform: translateY(-1px);
-}
-
-.editor .text {
-    height: 90%;
-    /* TEMPORARY */
-    width: 100%;
-    background-color: var(--c-background);
-}
-
 .bottom-bar {
+    position: absolute;
+    bottom: 0;
     background-color: var(--c-bottom-bar);
     width: 100vw;
     padding: 0 10px;
+    z-index: 420;
 
     align-items: center;
 }

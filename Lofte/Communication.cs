@@ -15,6 +15,14 @@ public class Communicator
         public string[]? Data { get; set; }
     }
 
+    public class FileSystemNode
+    {
+        public string Name { get; set; }
+        public bool IsDirectory { get; set; }
+        public string Path { get; set; }
+        public List<FileSystemNode> Children { get; set; }
+    }
+
     private static string CreateMessage(string message, string[] data)
     {
         var messageObject = new MessageObject { Msg = message, Data = data };
@@ -36,6 +44,9 @@ public class Communicator
         {
             case "GetFileExplorer":
                 GetFileExplorer(window, messageJson, openPath);
+                break;
+            case "GetFileContent":
+                GetFileContent(window, messageJson);
                 break;
             default:
                 break;
@@ -77,7 +88,12 @@ public class Communicator
             foreach (string file in Directory.GetFiles(path))
             {
                 node.Children.Add(
-                    new FileSystemNode { Name = Path.GetFileName(file), IsDirectory = false, Path = Path.GetFullPath(file) }
+                    new FileSystemNode
+                    {
+                        Name = Path.GetFileName(file),
+                        IsDirectory = false,
+                        Path = Path.GetFullPath(file)
+                    }
                 );
             }
         }
@@ -89,11 +105,45 @@ public class Communicator
         return node;
     }
 
-    public class FileSystemNode
+    public static void GetFileContent(PhotinoWindow window, MessageObject messageJson)
     {
-        public string Name { get; set; }
-        public bool IsDirectory { get; set; }
-        public string Path { get; set; }
-        public List<FileSystemNode> Children { get; set; }
+        string path = Path.GetFullPath(messageJson.Data[0]);
+        Console.WriteLine($"Path requested: {path}");
+
+        try
+        {
+            if (!File.Exists(path))
+            {
+                window.SendWebMessage(
+                    CreateMessage(
+                        "FileContent",
+                        new string[] { GetFileContentJson(path, $"Path '{path}' does not exist.") }
+                    )
+                );
+                return;
+            }
+
+            byte[] fileContent = File.ReadAllBytes(path);
+            window.SendWebMessage(
+                CreateMessage(
+                    "FileContent",
+                    new string[] { GetFileContentJson(path, Convert.ToBase64String(fileContent)) }
+                )
+            );
+        }
+        catch (Exception ex)
+        {
+            window.SendWebMessage(
+                CreateMessage(
+                    "FileContent",
+                    new string[] { GetFileContentJson(path, $"Error reading file: {ex.Message}") }
+                )
+            );
+        }
+    }
+
+    private static string GetFileContentJson(string path, string content)
+    {
+        return $"{{\"Path\": \"{path}\", \"Content\": \"{content}\"}}";
     }
 }

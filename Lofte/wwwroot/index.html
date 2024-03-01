@@ -1,98 +1,171 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lofte</title>
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/tooltips.css" />
     <link rel="stylesheet" href="css/helpers.css" />
     <link rel="stylesheet" href="css/sidebar.css" />
-    <script src="https://kit.fontawesome.com/bbd5e05e51.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/texteditor.css" />
+    <script
+      src="https://kit.fontawesome.com/bbd5e05e51.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-</head>
+    <link rel="stylesheet" href="css/prism.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/monokai-sublime.min.css"> -->
+    <!-- <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script> -->
+  </head>
 
-<body>
-    <div class="vertical-flex" style="height: 100vh;">
-        <div class="horizontal-flex" style="flex-grow: 1;" id="resize-container">
-            <div class="sidebar" id="js-sidebar">
-                <span class="tabs horizontal-flex">
-                    <i class="selected ph ph-files tooltip"><span class="tooltiptext">Explorer</span></i>
-                    <i class="ph ph-git-branch tooltip"><span class="tooltiptext">Git</span></i>
-                    <i class="ph ph-puzzle-piece tooltip"><span class="tooltiptext">Extensions</span></i>
-                </span>
-                <div class="content" id="js-sidebar-content">
-                    <p class="header" id="js-tab-name">EXPLORER</p>
+  <body>
+    <div class="vertical-flex" style="height: 100vh">
+      <div class="horizontal-flex" style="flex-grow: 1" id="resize-container">
+        <div class="sidebar" id="js-sidebar">
+          <span class="tabs horizontal-flex">
+            <i class="selected ph ph-files tooltip"
+              ><span class="tooltiptext">Explorer</span></i
+            >
+            <i class="ph ph-git-branch tooltip"
+              ><span class="tooltiptext">Git</span></i
+            >
+            <i class="ph ph-puzzle-piece tooltip"
+              ><span class="tooltiptext">Extensions</span></i
+            >
+          </span>
+          <div class="content" id="js-sidebar-content">
+            <p class="header" id="js-tab-name">EXPLORER</p>
 
-                    <!-- <div class="no-open-directory" id="js-no-open-directory">
+            <!-- <div class="no-open-directory" id="js-no-open-directory">
                         <p class="no-open-directory-message">There are no open directories, please open one below.</p>
                         <div id="js-directory-upload-button" class="button">Open Directory</div>
                         <input id="js-directory-input" type="file" onchange="selectFolder(event)" class="exists-but-hidden" webkitdirectory="true" multiple="true"/>
                     </div> -->
-
-                    <!-- <details open>
-                        <summary>Folder 1</summary>
-                        <ul>
-                            <li>File 1</li>
-                            <li>File 2</li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary>Folder 2</summary>
-                        <ul>
-                            <li>File 3</li>
-                            <li>File 4</li>
-                        </ul>
-                    </details> -->
-                </div>
-            </div>
-
-            <div class="resize" id="js-resize"></div>
-
-            <div class="editor">
-                <div class="file-tabs horizontal-flex">
-                    <span class="horizontal-flex">
-                        <i class="ph-fill ph-arrow-fat-left"></i>
-                        <i class="ph-fill ph-arrow-fat-right"></i>
-                    </span>
-                    <span class="files">
-                        <div class="file-tab selected">
-                            <span>
-                                <p>FileName.cs</p>
-                                <i class="ph-bold ph-x"></i>
-                            </span>
-                        </div>
-                        <div class="file-tab">
-                            <span>
-                                <p>FileName.cs</p>
-                                <i class="ph-bold ph-x"></i>
-                            </span>
-                        </div>
-                    </span>
-                    <span class="file-operations horizontal-flex">
-                        <i class="ph-bold ph-plus"></i>
-                        <i class="ph-fill ph-caret-down"></i>
-                    </span>
-                </div>
-                <div class="text">
-                    <p>text</p>
-                </div>
-            </div>
+          </div>
         </div>
-        <div class="horizontal-flex bottom-bar">
-            <i class="ph-bold ph-sidebar-simple" id="js-toggle-sidebar"></i>
-            <p>Line <span id="js-line-number">X</span>, Column <span id="js-column-number">X</span></p>
+
+        <div class="resize" id="js-resize"></div>
+
+        <div class="editor">
+          <div class="file-tabs horizontal-flex">
+            <span class="horizontal-flex">
+              <i class="ph-fill ph-arrow-fat-left"></i>
+              <i class="ph-fill ph-arrow-fat-right"></i>
+            </span>
+            <span class="files">
+              <div class="file-tab selected">
+                <span>
+                  <p>FileName.cs</p>
+                  <i class="ph-bold ph-x"></i>
+                </span>
+              </div>
+              <div class="file-tab">
+                <span>
+                  <p>FileName.cs</p>
+                  <i class="ph-bold ph-x"></i>
+                </span>
+              </div>
+            </span>
+            <span class="file-operations horizontal-flex">
+              <i class="ph-bold ph-plus"></i>
+              <i class="ph-fill ph-caret-down"></i>
+            </span>
+          </div>
+          <!-- <div contenteditable class="text" id="js-text-editor-content" spellcheck="false">
+                    text
+                </div> -->
+          <div class="text">
+            <!-- <pre>
+<code id="js-text-editor-content" class="lang-cs line-numbers" spellcheck="false" oninput="update(this);">
+
+</code>
+                    </pre> -->
+
+            <textarea
+              placeholder="Please open a file."
+              id="js-text-editor"
+              spellcheck="false"
+              oninput="update(this.value); sync_scroll(this);"
+              onscroll="sync_scroll(this);"
+              onkeydown="check_tab(this, event);"
+            ></textarea>
+            <pre id="highlighting" aria-hidden="true">
+<code class="language-cs line-numbers" id="js-text-editor-content">
+
+</code>
+</pre>
+          </div>
         </div>
+      </div>
+      <div class="horizontal-flex bottom-bar">
+        <i class="ph-bold ph-sidebar-simple" id="js-toggle-sidebar"></i>
+        <p>
+          Line <span id="js-line-number">X</span>, Column
+          <span id="js-column-number">X</span>
+        </p>
+      </div>
     </div>
-
 
     <script src="app://dynamic.js"></script>
     <script src="js/dotnet.js"></script>
     <script src="js/resize.js"></script>
     <script src="js/sidebar.js"></script>
-    <!-- <script src="js/fileexplorer.js"></script> -->
-</body>
 
+    <script src="js/prism.js"></script>
+
+    <script>
+      // document.addEventListener('keydown', function (event) {
+      //     if (event.key === 'Tab') {
+      //         event.preventDefault();
+      //     }
+      // });
+
+      // function update(element) {
+      //     Prism.highlightElement(element);
+      // }
+
+      function update(text) {
+        let result_element = document.querySelector("#js-text-editor-content");
+        // Handle final newlines (see article)
+        if (text[text.length - 1] == "\n") {
+          text += " ";
+        }
+        // Update code
+        result_element.innerHTML = text
+          .replace(new RegExp("&", "g"), "&amp;")
+          .replace(new RegExp("<", "g"), "&lt;"); /* Global RegExp */
+        // Syntax Highlight
+        Prism.highlightElement(result_element);
+      }
+
+      function sync_scroll(element) {
+        /* Scroll result to scroll coords of event - sync with textarea */
+        let result_element = document.querySelector("#highlighting");
+        // Get and set x and y
+        result_element.scrollTop = element.scrollTop;
+        result_element.scrollLeft = element.scrollLeft;
+      }
+
+      function check_tab(element, event) {
+        let code = element.value;
+        if (event.key == "Tab") {
+          /* Tab key pressed */
+          event.preventDefault(); // stop normal
+          let before_tab = code.slice(0, element.selectionStart); // text before tab
+          let after_tab = code.slice(
+            element.selectionEnd,
+            element.value.length
+          ); // text after tab
+          let cursor_pos = element.selectionStart + 1; // where cursor moves after tab - moving forward by 1 char to after tab
+          element.value = before_tab + "\t" + after_tab; // add tab char
+          // move cursor
+          element.selectionStart = cursor_pos;
+          element.selectionEnd = cursor_pos;
+          update(element.value); // Update text to include indent
+        }
+      }
+    </script>
+  </body>
 </html>

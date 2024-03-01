@@ -8,6 +8,9 @@ Lofte **will** be cross-platform (except for MacOS, potentially...)
 
 ### Progress:
 
+**2/28 - 3/1/2024** Actual text editor is done, still have to deal with saving, messy code, and bugs. It's 4am... \
+![Github is not that ass.](docs/github%20is%20so%20shit%202-29-2024.gif)
+
 **2/28/2024:** File explorer done. \
 ![Github is so ass.](docs/github%20is%20so%20shit%202-28-2024.gif)
 
